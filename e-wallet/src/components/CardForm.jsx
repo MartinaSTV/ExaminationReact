@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
 import { addCard } from '../Actions/Actions'
 
-
 function CardForm(){
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -20,7 +19,6 @@ function CardForm(){
     let [cardName, setcardName] = useState();
     let [valid, setvalid] = useState();
     let [cvv, setcvv] = useState();
-    
 
     function SaveInfo(){
         
@@ -45,7 +43,6 @@ function CardForm(){
         setvendor(event.target.value)
     };
 
-
     return(
 
         <section className='form'>
@@ -62,10 +59,10 @@ function CardForm(){
 
             <label htmlFor="vendors">VENDOR</label>
             <select name="vendors" id="" onChange={ getValue }>
-                <option value={`bitcoin ${ bitcoin} #FFAE34`}>BITCOIN INC</option>
-                <option value={`ninja ${ ninja} #222222`}>NINJA BANK</option>
-                <option value={`blockchain ${ blockhain} #8B58F9`}>BLOCKCHAIN INC</option>
-                <option value={`evil ${ evil}  #F33355`}>EVIL CORP</option>
+                <option value={`bitcoin ${ bitcoin } #FFAE34`}>BITCOIN INC</option>
+                <option value={`ninja ${ ninja } #222222`}>NINJA BANK</option>
+                <option value={`blockchain ${ blockhain } #8B58F9`}>BLOCKCHAIN INC</option>
+                <option value={`evil ${ evil } #F33355`}>EVIL CORP</option>
             </select>
             <button onClick={ SaveInfo }>AddCard</button>
         </section>
