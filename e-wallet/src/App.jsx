@@ -4,6 +4,7 @@ import Home from './views/Home'
 import AddCard from './views/AddCard'
 
 function App() {
+
   const router = createBrowserRouter([
      {
       path: '/',

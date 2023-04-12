@@ -1,7 +1,8 @@
 // loopa ut Cards 
 // hämta info från store och skriv ut i card i loopen (glöme ej bild och färg som i boooks uppgiften )
 import { useSelector } from "react-redux"
-import Card from "./Card/Card"
+import Card from "../Card/Card"
+import './CardStack.scss'
 function CardStack(){
 
     const savedCards = useSelector((state) => { return state.cards})
@@ -27,8 +28,6 @@ function CardStack(){
        const EmtyElement = emptyStore.map((item)=>{
         return <Card item ={ item } key={item.id}/>
     })
-
-
     } */
 
      const cardsElement = savedCards.map((item)=>{
@@ -36,8 +35,12 @@ function CardStack(){
     }) 
 
     return(
-        <section>
-            {cardsElement}
+        <section className="card-stack">
+           
+            <section className="card-stack__cards" >
+                {cardsElement}
+            </section>
+         
         </section>
     )
 

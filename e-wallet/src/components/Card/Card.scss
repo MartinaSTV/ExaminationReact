@@ -1,4 +1,60 @@
 .card{
     background-color:rgba(208, 208, 208, 1) ;
     border-radius: 5px;
+    font-family: 'PT Mono', monospace;
+    box-shadow: 10px grey ;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+        &__section{
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+        &__pictures{
+            display: flex;
+            padding: 0;
+        }
+        &__img{
+            margin-left: auto;
+            padding: 0;
+        }
+        &__labels{
+            display: flex;
+            font-size: 0.75rem;
+            padding: 0;
+        }
+        &__inputs{
+            display: flex;
+            font-size: 1.125rem ;
+            padding: 0;
+        }
+        &__title{
+            font-size: 1.125rem ;
+            padding: 0;
+            margin: 0;
+        }
+        &__valid{
+            margin-left: auto;
+            padding: 0;
+            margin-top:0;
+            margin-bottom: 0;
+        }
+        &__number{
+            font-size: 1.2rem;
+            padding: 0;
+            line-height: 32px;
+            letter-spacing: 0.03em;
+            margin: 0;
+        }
+        &__validThru{
+            margin-left: auto;
+        }
+        &__x{
+            background-color: white;
+            border-radius: 50%;
+            border: none;
+            height: fit-content;
+        }
 }

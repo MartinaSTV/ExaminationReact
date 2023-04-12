@@ -1,42 +1,57 @@
 import './Card.scss'
-import chipD from '../../assets/assets/chip-dark.svg'
+import chipDark from '../../assets/assets/chip-dark.svg'
 import bitC from '../../assets/assets/vendor-bitcoin.svg'
 import chipL from '../../assets/assets/chip-light.svg'
 
 function Card(props){
 
     function remove(){
-        
+
     }
 
    let propsen = Object.keys(props).length
    console.log(propsen)
 
      if (propsen === 0 ){
-        console.log('hej')
+    
         return(
             <section className='card'>
-                <section>
-                    <article><img src={chipD} alt=""/> <img src={bitC} alt="" /></article>
-                    <p>xxxx xxxx xxxx xxxx</p>
-                    <article><p>CARDHOLDER NAME</p><p>FIRSTNAME LASTNAME</p></article>
-                    <article><p>VALID THRU</p><p>MM/YY</p></article>
+                <section className='card__section'>
+                    <article className='card__pictures'>
+                        <img src={chipDark} alt=""/> 
+                        <img src={bitC} alt=""className='card__img' />
+                    </article>
+                    <p  className='card__number'>XXXX XXXX XXXX XXXX</p>
+                    <article className='card__labels'>
+                        <p>CARDHOLDER NAME</p>
+                        <p className='card__validThru'>VALID THRU</p>
+                    </article>
+                    <article className='card__inputs'>
+                        <p className='card__title'>FIRSTNAME LASTNAME</p>
+                        <p className='card__valid'>MM/YY</p>
+                    </article>
                 </section>
             </section>
         )
         
      }else{
         return(
-            <section className='card'  style={ {background: `${props.item.Vendor[2]}` }}>
-                <section >
-                    <article>
-                        <img src={chipL} alt=""/> 
-                        <img src={props.item.Vendor[1]} alt=""/>
-                        <button onClick={ remove }>x</button>
+            <section className='card' style={ {background:`${props.item.Vendor[2]}`, color:`${ props.item.Vendor[3]}`}}>
+                <section className='card__section' >
+                    <article  className='card__pictures'>
+                        <img src={chipL} alt="chip"/> 
+                        <img src={props.item.Vendor[1]} alt="vendor logo" className='card__img'/>
+                        <button className='card__x' onClick={ remove }>x</button>
                     </article>
-                    <p>{props.item.cardNumber}</p>
-                    <article><p>CARDHOLDER NAME</p><p>{props.item.cardName}</p></article>
-                    <article><p>VALID THRU</p><p>{props.item.valid}</p></article>
+                    <p  className='card__number'>{props.item.cardNumber}</p>
+                    <article className='card__labels' style={{color:`${props.item.Vendor[3]}`}}>
+                        <p>CARDHOLDER NAME</p>
+                        <p className='card__validThru'>VALID THRU</p>
+                    </article>
+                    <article className='card__inputs'>
+                        <p className='card__title'>{props.item.cardName}</p>
+                        <p className='card__valid'>{props.item.valid}</p>
+                    </article>
                 </section>
             </section>
         )

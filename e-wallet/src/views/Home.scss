@@ -1,0 +1,33 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__button{
+        border: 1px solid black;
+        color: black;
+        background-color: white;
+        border-radius: 5px;
+        width: 100%;
+        padding: 1rem;
+        font-family: 'PT Mono', monospace;
+        font-weight: 700;
+    }
+    &__title{
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 2.18rem;
+        line-height: 100%;
+    }
+    &__text{
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: rgba(34, 34, 34, 0.6);
+    }
+}

@@ -1,0 +1,11 @@
+.card-stack{
+    position: relative;
+    margin: 1rem;
+    height: 500px;
+
+    &__cards{
+        position: absolute;
+        z-index: -1;
+        top:0;
+    }
+}

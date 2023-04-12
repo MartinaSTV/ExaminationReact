@@ -6,4 +6,10 @@ function addCard(cardInfo){
     }
 
 }
-export {addCard}
+function remove(card){
+    return{
+        type: 'REMOVE',
+        payload: card
+    }
+}
+export {addCard, remove}

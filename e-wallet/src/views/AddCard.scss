@@ -1,0 +1,29 @@
+.add-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem;
+    align-items: center;
+
+    &__title{
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 2.18rem;
+        line-height: 100%;
+        text-transform: uppercase;
+    }
+    &__form{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    &__text{
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: rgba(34, 34, 34, 0.6);
+    }
+}
