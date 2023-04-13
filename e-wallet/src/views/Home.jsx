@@ -12,7 +12,8 @@ function Home (){
         <section className="home">
             <h1 className="home__title">E-Wallet</h1>
             <h4 className="home__text">Active Card</h4>
-            <section>
+            <section className="home__showCard"></section>
+            <section className="home__cardStack">
                 <CardStack/>     
             </section>
             <button className="home__button" onClick={ navigateToForm } >ADD A NEW CARD</button>

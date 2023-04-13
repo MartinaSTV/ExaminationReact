@@ -11,6 +11,16 @@ const reducer = (state = initialstate, action)=>{
                 ...state,
                 cards: allCards
             }
+
+        case 'REMOVE':
+            let removeCard =  state.cards.findIndex((card)=> card.id === action.payload)
+            const newcards = [...state.cards]
+            newcards.splice(removeCard, 1)
+
+            return{
+                ...state,
+                cards: newcards
+            }
         default:
             return state
     

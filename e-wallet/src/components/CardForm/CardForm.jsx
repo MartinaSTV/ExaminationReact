@@ -59,7 +59,7 @@ function CardForm(){
 
             <article className='form__article'>
                 <article className='form_small'>
-                    <label className='form__label' htmlFor="">VALID THRU</label>
+                    <label className='form__ValidThru' htmlFor="">VALID THRU</label>
                     <input className='form__input' type="text" onChange={(event) => { setvalid(event.target.value); }}/>
                 </article>
                 <article className='form__small'>    
@@ -69,6 +69,7 @@ function CardForm(){
             </article>
             <label className='form__label' htmlFor="vendors">VENDOR</label>
             <select name="vendors" id="" onChange={ getValue } className='form__input'>
+                <option value="">Choose Vendor</option>
                 <option value={`bitcoin ${ bitcoin } #FFAE34 #FFFFFF`}>BITCOIN INC</option>
                 <option value={`ninja ${ ninja } #222222 #FFFFFF`}>NINJA BANK</option>
                 <option value={`blockchain ${ blockhain } #8B58F9 #FFFFFF`}>BLOCKCHAIN INC</option>
