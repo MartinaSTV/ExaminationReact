@@ -14,9 +14,8 @@ function CardStack(){
 
     return(
         <section className="card-stack">
-           
             <section className="card-stack__cards" >
-                {cardsElement}
+                {cardsElement.length >0 ? cardsElement: <p>Du har inga kort</p>}
             </section>
          
         </section>
