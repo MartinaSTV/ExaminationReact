@@ -53,18 +53,18 @@ function CardForm(){
 
         <section className='form'>
             <label className='form__label' htmlFor="">CARD NUMBER</label>
-            <input className='form__input' type="text"  placeholder="XXXX XXXX XXXX XXXX" onChange={ getInputNumber}/>
+            <input className='form__input' type="number" placeholder="XXXX XXXX XXXX XXXX" onChange={ getInputNumber}/>
             <label className='form__label' htmlFor="">CARDHOLDER NAME</label> 
             <input className='form__input' type="text" placeholder="FIRSTNAME" onChange={(event) => { setcardName(event.target.value); }}/>
 
             <article className='form__article'>
                 <article className='form_small'>
                     <label className='form__ValidThru' htmlFor="">VALID THRU</label>
-                    <input className='form__input' type="text" onChange={(event) => { setvalid(event.target.value); }}/>
+                    <input className='form__input' type="number" onChange={(event) => { setvalid(event.target.value); }}/>
                 </article>
                 <article className='form__small'>    
                     <label className='form__label' htmlFor="CVV">CVV</label>
-                    <input  className='form__input' type="text" onChange={(event) => { setcvv(event.target.value); }} />
+                    <input  className='form__input' type="number" onChange={(event) => { setcvv(event.target.value); }} />
                 </article>
             </article>
             <label className='form__label' htmlFor="vendors">VENDOR</label>

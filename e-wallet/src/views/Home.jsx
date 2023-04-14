@@ -1,3 +1,5 @@
+// hämta det klickade kortet från store och lägg in nya prpps på card.
+// Ternery operator (till card) till vad den skall göra om propsen är tomma.
 import CardStack from "../components/CardStack/CardStack"
 import { useNavigate } from "react-router-dom"
 import'./Home.scss'
@@ -19,7 +21,7 @@ function Home (){
             <h1 className="home__title">E-Wallet</h1>
             <h4 className="home__text">Active Card</h4>
             <section className="home__showCard">
-              { showCard .hasOwnProperty('Vendor')? <Card item={ showCard }/> : ''}
+              { showCard.hasOwnProperty('Vendor')? <Card item={ showCard }/> : '' }
                
             </section>
             <section className="home__cardStack">

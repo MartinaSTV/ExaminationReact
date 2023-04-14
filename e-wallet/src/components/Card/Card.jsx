@@ -12,7 +12,8 @@ function Card(props){
 
     function decrease(){
         console.log(props.item)
-        dispatch(remove(props.item.id))
+        props.item.hasOwnProperty('id')?
+        dispatch(remove(props.item.id)) : ''
     }
 
     function handleclikedCard(){
