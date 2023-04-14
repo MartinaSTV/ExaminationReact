@@ -4,6 +4,7 @@ import bitcoin from '../../assets/assets/vendor-bitcoin.svg'
 import blockhain from '../../assets/assets/vendor-blockchain.svg'
 import evil from '../../assets/assets/vendor-evil.svg'
 import ninja from '../../assets/assets/vendor-ninja.svg'
+import chipLight from '../../assets/assets/chip-light.svg'
 import { useState, useId } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
@@ -20,10 +21,11 @@ function CardForm(){
     let [valid, setvalid] = useState();
     let [cvv, setcvv] = useState();
 
+  
     function SaveInfo(){
-        
+
         const splitVendor = vendor.split(' ')
-    
+
         let formValue = {
             id: id,
             Vendor: splitVendor,
@@ -31,12 +33,16 @@ function CardForm(){
             cardName: cardName,
             valid: valid, 
             cvv:cvv
-        }
-        console.log(formValue)
+        };
+     
+        formValue.cardNumber.length < 19 ? ''
+        :
+        dispatch(addCard(formValue)); 
 
-        dispatch(addCard(formValue))
 
-        navigate('/')
+        formValue.cardNumber.length < 19 ? alert('fyll i alla nummer')
+        :
+        navigate('/');
     };
 
     function getValue(event){
@@ -44,9 +50,8 @@ function CardForm(){
     };
 
     function getInputNumber(event){
-
-         setcardNumber(event.target.value)
-
+      
+         setcardNumber(event.target.value) 
     }
 
     return(
@@ -64,20 +69,19 @@ function CardForm(){
                 </article>
                 <article className='form__small'>    
                     <label className='form__label' htmlFor="CVV">CVV</label>
-                    <input  className='form__input' type="number" onChange={(event) => { setcvv(event.target.value); }} />
+                    <input  className='form__input' minLength={3} type="number" onChange={(event) => { setcvv(event.target.value); }} />
                 </article>
             </article>
             <label className='form__label' htmlFor="vendors">VENDOR</label>
             <select name="vendors" id="" onChange={ getValue } className='form__input'>
                 <option value="">Choose Vendor</option>
-                <option value={`bitcoin ${ bitcoin } #FFAE34 #FFFFFF`}>BITCOIN INC</option>
-                <option value={`ninja ${ ninja } #222222 #FFFFFF`}>NINJA BANK</option>
-                <option value={`blockchain ${ blockhain } #8B58F9 #FFFFFF`}>BLOCKCHAIN INC</option>
-                <option value={`evil ${ evil } #F33355 #FFFFFF`}>EVIL CORP</option>
+                <option value={`bitcoin ${ bitcoin } #FFAE34 #FFFFFF ${chipLight}`}>BITCOIN INC</option>
+                <option value={`ninja ${ ninja } #222222 #FFFFFF ${chipLight}`}>NINJA BANK</option>
+                <option value={`blockchain ${ blockhain } #8B58F9 #FFFFFF ${chipLight}`}>BLOCKCHAIN INC</option>
+                <option value={`evil ${ evil } #F33355 #FFFFFF ${chipLight}`}>EVIL CORP</option>
             </select>
             <button className='form__button' onClick={ SaveInfo }>AddCard</button>
         </section>
     )
-
 }
 export default CardForm
