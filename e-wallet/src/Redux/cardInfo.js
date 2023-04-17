@@ -1,3 +1,5 @@
+
+
 const initialstate = {
     cards: [],
     ShowCard:{}
@@ -20,13 +22,21 @@ const reducer = (state = initialstate, action)=>{
 
             return{
                 ...state,
-                cards: newcards
+                cards: newcards,
+                ShowCard: {}
             }
         case 'SHOW-CARD':
             return{
                 ...state,
                 ShowCard: action.payload
             }
+        case 'REMOVE-SHOWCARD':
+        
+            return{
+                ...state,
+                ShowCard: {}
+            }
+        
         default:
             return state
     

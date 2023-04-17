@@ -21,7 +21,7 @@ function Home (){
             <h1 className="home__title">E-Wallet</h1>
             <h4 className="home__text">Active Card</h4>
             <section className="home__showCard">
-              { showCard.hasOwnProperty('Vendor')? <Card item={ showCard }/> : '' }
+              { showCard.hasOwnProperty('Vendor')? <Card item={ showCard }/> : <p className="home__nocard">No card to display</p> }
                
             </section>
             <section className="home__cardStack">

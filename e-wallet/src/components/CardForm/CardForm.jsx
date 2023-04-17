@@ -15,17 +15,18 @@ function CardForm(){
     const navigate = useNavigate()
     const id = useId();
 
-    let [vendor, setvendor] = useState();
+    let [vendor, setvendor] = useState(`bitcoin ${ bitcoin } #FFAE34 #FFFFFF ${chipLight}`);
     let [cardNumber, setcardNumber] = useState();
     let [cardName, setcardName] = useState();
     let [valid, setvalid] = useState();
     let [cvv, setcvv] = useState();
 
-  
     function SaveInfo(){
 
-        const splitVendor = vendor.split(' ')
-
+       let splitVendor = []
+     
+        splitVendor = vendor.split(' ')  
+        
         let formValue = {
             id: id,
             Vendor: splitVendor,
@@ -35,14 +36,20 @@ function CardForm(){
             cvv:cvv
         };
      
-        formValue.cardNumber.length < 19 ? ''
+        //Kontrollera formulär
+        formValue.cardNumber.length < 19 || formValue.cardNumber.length > 20 
+        && formValue.valid.length < 4 || formValue.valid.length > 5  ?
+         alert('Fill in the application')
         :
         dispatch(addCard(formValue)); 
 
 
-        formValue.cardNumber.length < 19 ? alert('fyll i alla nummer')
+        formValue.cardNumber.length < 19 || formValue.cardNumber.length > 20  
+         && formValue.valid.length < 4 || formValue.valid.length > 5  ?
+         alert('Fill in the application correct please')
         :
         navigate('/');
+       
     };
 
     function getValue(event){
@@ -51,37 +58,37 @@ function CardForm(){
 
     function getInputNumber(event){
       
-         setcardNumber(event.target.value) 
+        setcardNumber(event.target.value) 
     }
 
     return(
 
-        <section className='form'>
+        <form className='form' /* onClick={(e) => e.preventDefault()} */ >
             <label className='form__label' htmlFor="">CARD NUMBER</label>
             <input className='form__input' type="number" placeholder="XXXX XXXX XXXX XXXX" onChange={ getInputNumber}/>
             <label className='form__label' htmlFor="">CARDHOLDER NAME</label> 
-            <input className='form__input' type="text" placeholder="FIRSTNAME" onChange={(event) => { setcardName(event.target.value); }}/>
+            <input className='form__input' type="text" required placeholder="FIRSTNAME" onChange={(event) => { setcardName(event.target.value); }}/>
 
             <article className='form__article'>
                 <article className='form_small'>
                     <label className='form__ValidThru' htmlFor="">VALID THRU</label>
-                    <input className='form__input' type="number" onChange={(event) => { setvalid(event.target.value); }}/>
+                    <input className='form__input' type="number"  required onChange={(event) => { setvalid(event.target.value); }}/>
                 </article>
                 <article className='form__small'>    
                     <label className='form__label' htmlFor="CVV">CVV</label>
-                    <input  className='form__input' minLength={3} type="number" onChange={(event) => { setcvv(event.target.value); }} />
+                    <input  className='form__input' type="number" required onChange={(event) => { setcvv(event.target.value); }} />
                 </article>
             </article>
             <label className='form__label' htmlFor="vendors">VENDOR</label>
-            <select name="vendors" id="" onChange={ getValue } className='form__input'>
-                <option value="">Choose Vendor</option>
+            <select name="vendors" id="" onChange={ getValue } className='form__input' required>
+                <option value={'NoVendor'}>Choose Vendor</option>
                 <option value={`bitcoin ${ bitcoin } #FFAE34 #FFFFFF ${chipLight}`}>BITCOIN INC</option>
                 <option value={`ninja ${ ninja } #222222 #FFFFFF ${chipLight}`}>NINJA BANK</option>
                 <option value={`blockchain ${ blockhain } #8B58F9 #FFFFFF ${chipLight}`}>BLOCKCHAIN INC</option>
                 <option value={`evil ${ evil } #F33355 #FFFFFF ${chipLight}`}>EVIL CORP</option>
             </select>
-            <button className='form__button' onClick={ SaveInfo }>AddCard</button>
-        </section>
+            <button type='button' className='form__button' /* disabled={cvv === "" && valid === '' && cardName ==='' && cardNumber === '' && vendor === ''} */ onClick={ SaveInfo }>AddCard</button>
+        </form>
     )
 }
 export default CardForm

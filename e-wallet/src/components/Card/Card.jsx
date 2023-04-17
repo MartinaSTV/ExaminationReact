@@ -1,10 +1,8 @@
 import './Card.scss'
 import chipDark from '../../assets/assets/chip-dark.svg'
 import bitC from '../../assets/assets/vendor-bitcoin.svg'
-import chipL from '../../assets/assets/chip-light.svg'
 import { useDispatch } from 'react-redux'
-import { remove } from '../../Actions/Actions'
-import { showCard } from '../../Actions/Actions'
+import { showCard, removeShowCard, remove } from '../../Actions/Actions'
 
 function Card(props){
     const dispatch = useDispatch()
@@ -14,13 +12,16 @@ function Card(props){
         console.log(props.item)
         props.item.hasOwnProperty('id')?
         dispatch(remove(props.item.id)) : ''
+
+        // ta bort från showcard... ?? fungerar ej
+        dispatch(removeShowCard(props.item)) 
     }
 
     function handleclikedCard(){
+
         dispatch(showCard(props.item))
     }
         return(
-            
              <section  onClick={ handleclikedCard}  className='card' style={ props.item && props.item.Vendor[3]? {color:`${props.item.Vendor[3]}`, background: `${props.item.Vendor[2]}`} :{backround: 'grey' } }>
                 <section className='card__section' >
                     <article  className='card__pictures'>

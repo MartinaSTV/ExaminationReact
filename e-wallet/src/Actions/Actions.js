@@ -18,4 +18,10 @@ function showCard(card){
         payload: card
     }
 }
-export {addCard, remove, showCard}
+function removeShowCard(showCard){
+    return{
+        type: 'REMOVE-SHOWCARD',
+        payload: showCard
+    }
+}
+export {addCard, remove, showCard, removeShowCard}
