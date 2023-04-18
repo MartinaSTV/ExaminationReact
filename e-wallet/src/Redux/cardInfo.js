@@ -1,5 +1,4 @@
 
-
 const initialstate = {
     cards: [],
     ShowCard:{}
@@ -22,16 +21,19 @@ const reducer = (state = initialstate, action)=>{
 
             return{
                 ...state,
-                cards: newcards,
-                ShowCard: {}
+                cards: newcards
             }
         case 'SHOW-CARD':
-            return{
-                ...state,
-                ShowCard: action.payload
+            // retunerar indexet och är tru i så fall, om den är tom så blir den -1
+            let showCardDelete = state.cards.findIndex((card)=> card.id === action.payload.id)
+            if (showCardDelete > -1){ 
+                return{
+                    ...state,
+                    ShowCard: action.payload
+                }
             }
         case 'REMOVE-SHOWCARD':
-        
+                
             return{
                 ...state,
                 ShowCard: {}

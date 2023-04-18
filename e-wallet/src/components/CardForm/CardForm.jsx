@@ -15,6 +15,7 @@ function CardForm(){
     const navigate = useNavigate()
     const id = useId();
 
+    // default vendor är bitcoin
     let [vendor, setvendor] = useState(`bitcoin ${ bitcoin } #FFAE34 #FFFFFF ${chipLight}`);
     let [cardNumber, setcardNumber] = useState();
     let [cardName, setcardName] = useState();
@@ -37,14 +38,14 @@ function CardForm(){
         };
      
         //Kontrollera formulär
-        formValue.cardNumber.length < 19 || formValue.cardNumber.length > 20 
+        formValue.cardNumber.length < 17 || formValue.cardNumber.length > 20 
         && formValue.valid.length < 4 || formValue.valid.length > 5  ?
          alert('Fill in the application')
         :
         dispatch(addCard(formValue)); 
 
 
-        formValue.cardNumber.length < 19 || formValue.cardNumber.length > 20  
+        formValue.cardNumber.length < 17 || formValue.cardNumber.length > 20  
          && formValue.valid.length < 4 || formValue.valid.length > 5  ?
          alert('Fill in the application correct please')
         :

@@ -13,12 +13,12 @@ function Card(props){
         props.item.hasOwnProperty('id')?
         dispatch(remove(props.item.id)) : ''
 
-        // ta bort från showcard... ?? fungerar ej
-        dispatch(removeShowCard(props.item)) 
+        // ta bort från showcard... 
+        dispatch(removeShowCard(props.item.id)) 
     }
 
     function handleclikedCard(){
-
+console.log('hej')
         dispatch(showCard(props.item))
     }
         return(
