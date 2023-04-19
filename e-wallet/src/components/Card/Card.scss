@@ -64,10 +64,13 @@
         }
 }
 @media only screen and (max-width: 300px) {
+
     .card{
-        width: 200px;
         padding: 0.5rem;
         width: auto;
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
   }

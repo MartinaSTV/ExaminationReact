@@ -35,6 +35,7 @@
     &__cardStack{
         margin-top: 1rem;
         min-height: 350px ;
+      /*   max-width: ; */
     }
     &__showCard{
         margin-top: 11rem;
@@ -57,5 +58,6 @@
     .home__cardStack{
         margin-left: auto;
         margin-right: auto;
+        
     }
   }
