@@ -1,11 +1,14 @@
 .card-stack{
-   margin-top: 10rem;
-   display: grid;
-   grid-template-columns: repeat(1, 1fr);
-   gap: 1rem;
-  
+    margin-bottom: 1rem;
+    height: 100%;
+    height: 800px;
+    /* overflow: scroll; */
+
     &__cards{
-        grid-column: auto span 1 ;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        // gör en auto rows och sen bestämer du hur stor containern ska vara istället för Auto som anpassar sig efter innehållet
+        grid-auto-rows: 3rem;
     }
     &__nocard{
         font-family: 'PT Mono', monospace;

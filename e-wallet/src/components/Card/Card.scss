@@ -5,11 +5,10 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    margin: -11rem;
     position: relative;
     z-index: 1;
     min-height: 11rem;
-   /*  text-shadow: -1px -1px rgb(243, 235, 235); */
+    width: 300px;
     
         &__section{
             display: flex;
@@ -65,7 +64,19 @@
         }
 }
 .card:hover{
-    box-shadow: 5px  5px 5px grey;
+    box-shadow: 5px  5px 5px rgb(129, 126, 126);
+}
+.bitcoin{
+    text-shadow: -0.5px -0.5px  rgb(91, 88, 88);
+}
+.ninja{
+    text-shadow: -0.5px -0.5px rgb(71, 70, 70);
+}
+.blockchain{
+    text-shadow: 0.5px 0.5px rgb(68, 66, 66);
+}
+.evil{
+    text-shadow: -0.5px -0.5px rgb(105, 104, 104);
 }
 @media only screen and (max-width: 310px) {
 

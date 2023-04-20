@@ -22,7 +22,7 @@ console.log('hej')
         dispatch(showCard(props.item))
     }
         return(
-             <section  onClick={ handleclikedCard}  className='card' style={ props.item && props.item.Vendor[3]? {color:`${props.item.Vendor[3]}`, background: `${props.item.Vendor[2]}`} :{backround: 'grey' } }>
+             <section  onClick={ handleclikedCard}  className={ props.item? `card ${props.item.Vendor[0]}`: 'card'} style={ props.item && props.item.Vendor[3]? {color:`${props.item.Vendor[3]}`, background: `${props.item.Vendor[2]}`} :{backround: 'grey' } }>
                 <section className='card__section' >
                     <article  className='card__pictures'>
                         <img src={props.item ? props.item.Vendor[4]: chipDark} alt="chip"/> 
