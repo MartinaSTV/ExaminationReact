@@ -18,8 +18,8 @@ function Card(props){
     }
 
     function handleclikedCard(){
-console.log('hej')
-        dispatch(showCard(props.item))
+
+        if (props.item?.cardNumber) dispatch(showCard(props.item))
     }
         return(
              <section  onClick={ handleclikedCard}  className={ props.item? `card ${props.item.Vendor[0]}`: 'card'} style={ props.item && props.item.Vendor[3]? {color:`${props.item.Vendor[3]}`, background: `${props.item.Vendor[2]}`} :{backround: 'grey' } }>
